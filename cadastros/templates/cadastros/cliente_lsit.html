@@ -7,16 +7,16 @@
     <title>ClienteList</title>
 </head>
 <body>
-    <ul>
+    
     {% for cliente in object_list %}
-        <li>{{ cliente.user}} </li>
-        <li> {{ cliente.cpf}} </li>
-        <li> {{cliente.rg}}</li>
-        <li> {{cliente.email}}</li>
-        <li>{{ cliente.telefone}}</li>
-        <li> {{cliente.id}}</li>
-        
+    <p>{{ cliente.user}} </p>
+    <p> {{ cliente.cpf}} </p>
+    <p> {{cliente.rg}}</p>
+    <p> {{cliente.email}}</p>
+    <p>{{ cliente.telefone}}</p>
+    <p> {{cliente.id}}</p>
+    <br>
     {% endfor %}
-    </ul>
+
 </body>
 </html>
