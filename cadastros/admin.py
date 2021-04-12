@@ -9,4 +9,4 @@ class ClienteAdmin(admin.ModelAdmin):
 
 @admin.register(Endereco)
 class EnderecoAdmin(admin.ModelAdmin):
-    list_display = ['logradouro','bairro','cidade','estado','numero','email']
+    list_display = ['logradouro','bairro','cidade','estado','numero','email','endereco_principal']

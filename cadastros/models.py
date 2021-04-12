@@ -33,6 +33,7 @@ class Endereco(models.Model):
 
     active = models.BooleanField(default=True)
 
+    endereco_principal = models.BooleanField("Endereço principal", default=False)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     def __str__(self):
         return str(self.id)
