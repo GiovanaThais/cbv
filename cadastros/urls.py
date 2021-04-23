@@ -6,7 +6,7 @@ urlpatterns = [
     path('',ClienteList.as_view(),name='cliente_list'),
     path('create/',ClienteCreate.as_view(),name='cliente_create'),
     path('update/<int:pk>/',ClienteUpdate.as_view(),name='cliente_update'),
-    path('delete/<int:pk/',ClienteDelete.as_view(),name='cliente_delete'),
+    path('delete/<int:pk>/',ClienteDelete.as_view(),name='cliente_delete'),
 
     path('list/',EnderecoList.as_view(), name= 'endereco_list'),
     path('createAddress/',EnderecoCreate.as_view(), name = 'endereco_create'),

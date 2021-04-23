@@ -12,7 +12,6 @@ class Cliente(models.Model):
     email = models.EmailField("email")
     begin_date= models.DateTimeField(auto_now_add=True)
     
-    active = models.BooleanField(default=True)
 
     def __str__(self):
         return str(self.nome)
@@ -36,7 +35,7 @@ class Endereco(models.Model):
 
     endereco_principal = models.BooleanField("Endereço principal", default=False)
     cliente = models.ForeignKey(Cliente,on_delete=models.CASCADE,related_name='endereco_cliente',verbose_name='Cliente')
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+
     def __str__(self):
         return str(self.id)
 

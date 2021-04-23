@@ -11,12 +11,12 @@ class ClienteList(ListView):
 
 class ClienteCreate(CreateView):
     model = Cliente
-    fields = ['foto','user','id','nome','sobrenome','cpf','rg','telefone','email']
+    fields = ['foto','id','nome','sobrenome','cpf','rg','telefone','email']
     success_url = reverse_lazy('cliente_list')
 
 class ClienteUpdate(UpdateView):
     model = Cliente
-    fields = ['foto','user','id','nome','sobrenome','cpf','rg','telefone','email']
+    fields = ['foto','id','nome','sobrenome','cpf','rg','telefone','email']
     success_url = reverse_lazy('cliente_list')
 
 class ClienteDelete(DeleteView):
@@ -27,12 +27,12 @@ class EnderecoList(ListView):
     model = Endereco
 class EnderecoCreate(CreateView):
     model = Endereco
-    fields = ['user','logradouro','bairro','cidade','estado','numero','email','endereco_principal']
+    fields = ['logradouro','bairro','cidade','estado','numero','email','endereco_principal','cliente']
     success_url = reverse_lazy('endereco_list')
 
 class EnderecoUpdate(UpdateView):
     model = Endereco
-    fields = ['user','logradouro','bairro','cidade','estado','numero','email','endereco_principal']
+    fields = ['logradouro','bairro','cidade','estado','numero','email','endereco_principal','cliente']
     success_url = reverse_lazy('endereco_list')
 
 class EnderecoDelete(DeleteView):
