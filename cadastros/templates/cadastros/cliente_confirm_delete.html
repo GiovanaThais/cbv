@@ -5,14 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClienteForm</title>
+    <style>
+        .button {
+          background-color: #f44336; 
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        p.one {
+            border-style: solid;
+            border-color: rgb(223, 90, 57);
+        }
+        .content {
+            max-width: 500px;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Confirme se deseja apagar este cliente: </h1>
+    <div class="content">
+    <p class="one">
+    <h2>Confirme se deseja apagar este cliente: </h2>
     <form method="POST">
         {% csrf_token %}
-        <button type="submit">
-            Deletar
-        </button>
+        <button class="button">Deletar</button>
     </form>
+    </p></div>
 </body>
 </html>

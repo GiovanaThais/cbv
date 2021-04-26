@@ -5,18 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EnderecoList</title>
+    <style>
+        #customers {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        #customers td, #customers th {
+          border: 1px solid #ddd;
+          padding: 10px;
+        }
+        
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #customers tr:hover {background-color: #ddd;}
+        
+        #customers th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #4fd454;
+          color: white;
+        }
+        </style>
 </head>
 <body>
+    <table id="customers">
+        <tr>
+          <th>Logradouro</th>
+          <th>Bairro</th>
+          <th>Numero</th>
+          <th>Cidade</th>
+          <th>Estado</th>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Email</th>
+          <th>Principal</th>
+        </tr>
     {% for endereco in object_list %}
-    <p>{{ endereco.cidade }}</p>
-    <p>{{ endereco.estado }}</p>
-    <p>{{ endereco.logradouro }}</p>
-    <p>{{ endereco.bairro }}</p>
-    <p>{{ endereco.numero }}</p>
-    <p>{{ endereco.user }}</p>
-    <p>{{ endereco.email }}</p>
-    <p>{{ endereco.id}}</p>
-    <p>{{ endereco.endereco_principal}}</p>
+    <tr>
+        <td>{{ endereco.logradouro }}</td>
+        <td>{{ endereco.bairro }}</td>
+        <td>{{ endereco.numero }}</td>
+        <td>{{ endereco.cidade }}</td>
+        <td>{{ endereco.estado }}</td>
+        <td>{{ endereco.id}}</td>
+        <td>{{ endereco.cliente }}</td>
+        <td>{{ endereco.email}}</td>
+        <td>{{ endereco.endereco_principal}}</td>
+    </tr>
     <br>
     {% endfor %}
 </body>

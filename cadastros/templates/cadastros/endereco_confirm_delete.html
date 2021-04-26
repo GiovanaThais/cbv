@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EnderecoForm</title>
+    <style>
+        .button {
+            background-color: #f02c1e;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        .content {
+            max-width: 500px;
+            margin: auto;
+            padding: 10px;
+        }
+        p.one {
+            border-style: solid;
+            border-color: rgb(223, 90, 57);
+        }
+
+    </style>
 </head>
+
 <body>
-    <h2>Confirme que deseja apagar este endereço: </h2>
-    <form method="POST">
-        {% csrf_token %}
-        <button type="submit">
-            Deletar
-        </button>
-    </form>
+    <div class="content">
+    <p class="one">
+        <h2>Confirme que deseja apagar este endereço: </h2>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <button class="button">Deletar</button>
+        </form>
+    </p>
+    </div>
 </body>
+
 </html>

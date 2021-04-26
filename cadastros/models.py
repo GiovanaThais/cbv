@@ -11,9 +11,8 @@ class Cliente(models.Model):
     telefone = models.CharField("telefone", max_length=12)
     email = models.EmailField("email")
     begin_date= models.DateTimeField(auto_now_add=True)
-    
     def __str__(self):
-        return str(self.nome)
+        return str(self.id)
 
     class Meta:
         db_table= 'cliente'
