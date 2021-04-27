@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Cliente(models.Model):
-    foto = models.ImageField()
+    foto = models.ImageField(upload_to='images/')
     nome = models.CharField("nome", max_length=50)
     sobrenome = models.CharField("sobrenome", max_length=100)
     cpf = models.CharField("cpf", max_length=100)
@@ -29,7 +29,7 @@ class Endereco(models.Model):
     email = models.EmailField("email")
     begin_date= models.DateTimeField(auto_now_add=True)
 
-    active = models.BooleanField(default=True)
+    active = models.BooleanField(default=True)#para verificar se endereço está ativo
 
     endereco_principal = models.BooleanField("Endereço principal", default=False)
     
