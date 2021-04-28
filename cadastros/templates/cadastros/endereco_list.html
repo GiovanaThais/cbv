@@ -7,26 +7,32 @@
     <title>EnderecoList</title>
     <style>
         #customers {
-          font-family: Arial, Helvetica, sans-serif;
-          border-collapse: collapse;
-          width: 100%;
-        }
-        .button {
-          background-color: #537ef5; 
-          border: none;
-          color: white;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
         }
         
+        a.one:link, a.one:visited {
+        background-color: #0ca7ce;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;}
+        a.one:hover, a.one:active { background-color: rgb(55, 174, 221);} 
+        
+        a.four:link, a.four:visited {
+        background-color: #0ca7ce;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;}
+        a.four:hover, a.four:active { background-color: rgb(34, 116, 148);} 
+
         #customers td, #customers th {
-          border: 1px solid #ddd;
-          padding: 10px;
+        border: 1px solid #ddd;
+        padding: 10px;
         }
         
         #customers tr:nth-child(even){background-color: #f2f2f2;}
@@ -34,42 +40,64 @@
         #customers tr:hover {background-color: #ddd;}
         
         #customers th {
-          padding-top: 12px;
-          padding-bottom: 12px;
-          text-align: left;
-          background-color: #4fd454;
-          color: white;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #008b8b;
+        color: white;
         }
-        </style>
+
+        a.two:link, a.two:visited {
+        background-color: #f44336;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        }
+        a.two:hover, a.two:active { background-color: red;}
+
+        a.three:link {color:#003cff;}
+        a.three:visited {color:#05152c;}
+        a.three:hover {font-family:monospace;}
+    </style>
 </head>
 <body>
     <table id="customers">
         <tr>
-          <th>Logradouro</th>
-          <th>Bairro</th>
-          <th>Numero</th>
-          <th>Cidade</th>
-          <th>Estado</th>
-          <th>ID</th>
-          <th>Cliente</th>
-          <th>Email</th>
-          <th>Principal</th>
+        <th>ID</th>
+        <th>Logradouro</th>
+        <th>Bairro</th>
+        <th>Numero</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th>Cliente</th>
+        <th>Email</th>
+        <th>Principal</th>
+        <th>Deletar</th>
         </tr>
     {% for endereco in object_list %}
     <tr>
+        <td>
+            <b><a class="three" href="{% url 'endereco_update' endereco.id %}"  target="_blank">{{ endereco.id}}</a></b>
+        </td>
         <td>{{ endereco.logradouro }}</td>
         <td>{{ endereco.bairro }}</td>
         <td>{{ endereco.numero }}</td>
         <td>{{ endereco.cidade }}</td>
         <td>{{ endereco.estado }}</td>
-        <td>{{ endereco.id}}</td>
         <td>{{ endereco.cliente }}</td>
         <td>{{ endereco.email}}</td>
         <td>{{ endereco.endereco_principal}}</td>
+        <td>
+            <a class="two" href="{% url 'endereco_delete' endereco.id %}" target="_blank">Deletar</a>
+        </td>
     </tr>
     <br>
     {% endfor %}
-    </table>  
-    <button class="button">Cadastrar Endereço</button>
+    </table>
+    <a class="four" href="/cadastros/" target="_blank">Voltar</a>  
+    <a class="one" href="/cadastros/createAddress/" target="_blank">Cadastrar Endereço</a>
+
 </body>
 </html>

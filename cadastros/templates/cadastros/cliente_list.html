@@ -11,23 +11,29 @@
           border-collapse: collapse;
           width: 100%;
         }
-        
         #customers td, #customers th {
           border: 1px solid #ddd;
           padding: 10px;
         }
-        .button {
-          background-color: #537ef5; 
-          border: none;
-          color: white;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          cursor: pointer;
+
+        a.three:link, a:visited {
+        background-color: #0ca7ce;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
         }
+        a.three:hover, a:active {background-color: rgb(55, 174, 221);}
+        a.four:link, a:visited {
+        background-color: #0ca7ce;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        }
+        a.four:hover, a:active {background-color: rgb(34, 116, 148);}
         
         #customers tr:nth-child(even){background-color: #f2f2f2;}
         
@@ -37,33 +43,54 @@
           padding-top: 12px;
           padding-bottom: 12px;
           text-align: left;
-          background-color: #4fd454;
+          background-color: #008b8b;
           color: white;
         }
-        </style>
+
+        a.one:link, a.one:visited {
+        background-color: #f44336;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        }
+        a.one:hover, a.one:active { background-color: red;}
+        
+        a.two:link {color:#003cff;}
+        a.two:visited {color:#05152c;}
+        a.two:hover {font-family:monospace;}
+    </style>
 </head>
 <body>
     <table id="customers">
         <tr>
-          <th>Cliente</th>
-          <th>CPF</th>
-          <th>RG</th>
-          <th>Email</th>
-          <th>Telefone</th>
-          <th>ID</th>
-
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>CPF</th>
+        <th>RG</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Deletar</th>
         </tr>
     {% for cliente in object_list %}
         <tr>
-            <td>{{ cliente.nome}} </td>
+            <td> 
+                <b><a class="two" href="{% url 'cliente_update' cliente.id %}" target="_blank">{{cliente.id}}</a></b>
+            </td>
+            <td>{{ cliente.nome}} {{cliente.sobrenome}} </td>
             <td> {{ cliente.cpf}} </td>
             <td> {{cliente.rg}}</td>
             <td> {{cliente.email}}</td>
             <td>{{ cliente.telefone}}</td>
-            <td> {{cliente.id}}</td>
+            
+            <td>
+                <a class="one" href="{% url 'cliente_delete' cliente.id %}" target="_blank">Deletar</a>
+            </td>
         </tr><br>
     {% endfor %}
     </table>
-    <button class="button">Cadastre-se</button>
+    <a class="three" href="/cadastros/create/" target="_blank">Cadastrar</a>
+    <a class="four" href="/cadastros/list/" target="_blank">Endereços</a>
 </body>
 </html>
