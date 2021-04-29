@@ -71,7 +71,7 @@
         <th>RG</th>
         <th>Email</th>
         <th>Telefone</th>
-        <th>Deletar</th>
+        <th>Ações</th>
         </tr>
     {% for cliente in object_list %}
         <tr>
@@ -85,12 +85,13 @@
             <td>{{ cliente.telefone}}</td>
             
             <td>
+                <a class="four" href= "/cadastros/list/" target="_blank">Endereços</a>
                 <a class="one" href="{% url 'cliente_delete' cliente.id %}" target="_blank">Deletar</a>
             </td>
         </tr><br>
     {% endfor %}
     </table>
     <a class="three" href="/cadastros/create/" target="_blank">Cadastrar</a>
-    <a class="four" href="/cadastros/list/" target="_blank">Endereços</a>
+    
 </body>
 </html>

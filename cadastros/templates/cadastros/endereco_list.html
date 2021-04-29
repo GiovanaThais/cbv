@@ -68,12 +68,13 @@
         <th>ID</th>
         <th>Logradouro</th>
         <th>Bairro</th>
-        <th>Numero</th>
+        <th>Número</th>
         <th>Cidade</th>
         <th>Estado</th>
         <th>Cliente</th>
         <th>Email</th>
         <th>Principal</th>
+        <th>Descrição</th>
         <th>Deletar</th>
         </tr>
     {% for endereco in object_list %}
@@ -89,6 +90,7 @@
         <td>{{ endereco.cliente }}</td>
         <td>{{ endereco.email}}</td>
         <td>{{ endereco.endereco_principal}}</td>
+        <td>{{ endereco.descricao}}</td>
         <td>
             <a class="two" href="{% url 'endereco_delete' endereco.id %}" target="_blank">Deletar</a>
         </td>

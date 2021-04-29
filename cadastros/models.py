@@ -27,6 +27,7 @@ class Endereco(models.Model):
     estado = models.CharField("estado", max_length=100)
     numero = models.CharField("numero", max_length=100)
     email = models.EmailField("email")
+    descricao = models.CharField("descrição do endereço", max_length=50)
     begin_date= models.DateTimeField(auto_now_add=True)
 
     active = models.BooleanField(default=True)#para verificar se endereço está ativo

@@ -27,12 +27,12 @@ class EnderecoList(ListView):
     model = Endereco
 class EnderecoCreate(CreateView):
     model = Endereco
-    fields = ['logradouro','bairro','cidade','estado','numero','email','endereco_principal','cliente']
+    fields = ['logradouro','bairro','cidade','estado','numero','email','endereco_principal','descricao','cliente']
     success_url = reverse_lazy('endereco_list')
 
 class EnderecoUpdate(UpdateView):
     model = Endereco
-    fields = ['logradouro','bairro','cidade','estado','numero','email','endereco_principal','cliente']
+    fields = ['logradouro','bairro','cidade','estado','numero','email','endereco_principal','descricao','cliente']
     success_url = reverse_lazy('endereco_list')
 
 class EnderecoDelete(DeleteView):
