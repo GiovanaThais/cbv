@@ -85,7 +85,7 @@
             <td>{{ cliente.telefone}}</td>
             
             <td>
-                <a class="four" href= "/cadastros/list/" target="_blank">Endereços</a>
+                <a class="four" href="{% url 'endereco_cliente' cliente.id %}"  target="_blank">Endereços</a>
                 <a class="one" href="{% url 'cliente_delete' cliente.id %}" target="_blank">Deletar</a>
             </td>
         </tr><br>

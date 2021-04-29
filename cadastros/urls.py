@@ -11,6 +11,7 @@ urlpatterns = [
     path('delete/<int:pk>/',ClienteDelete.as_view(),name='cliente_delete'),
 
     path('list/',EnderecoList.as_view(), name= 'endereco_list'),
+    path('cliente/<int:cliente_pk>/enderecos',EnderecoList.as_view(), name='endereco_cliente'),
     path('createAddress/',EnderecoCreate.as_view(), name = 'endereco_create'),
     path('updateAddress/<int:pk>/',EnderecoUpdate.as_view(), name = 'endereco_update'),
     path('deleteAddress/<int:pk>/',EnderecoDelete.as_view(), name = 'endereco_delete'),
