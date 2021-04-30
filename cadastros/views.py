@@ -8,23 +8,23 @@ from django.http import HttpResponse
 # Create your views here.
 class ClienteList(ListView):
     model = Cliente
-    queryset = Endereco.objects.all()
+    queryset = Cliente.objects.all()
 
 class ClienteCreate(CreateView):
     model = Cliente
-    queryset = Endereco.objects.all()
+    queryset = Cliente.objects.all()
     fields = ['foto','id','nome','sobrenome','cpf','rg','telefone','email']
     success_url = reverse_lazy('cliente_list')
 
 class ClienteUpdate(UpdateView):
     model = Cliente
-    queryset = Endereco.objects.all()
+    queryset = Cliente.objects.all()
     fields = ['foto','id','nome','sobrenome','cpf','rg','telefone','email']
     success_url = reverse_lazy('cliente_list')
 
 class ClienteDelete(DeleteView):
     model = Cliente
-    queryset = Endereco.objects.all()
+    queryset = Cliente.objects.all()
     success_url = reverse_lazy('cliente_list')
 
 class EnderecoList(ListView):
