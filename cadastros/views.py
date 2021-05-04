@@ -4,6 +4,7 @@ from .models import Cliente
 from .models import Endereco
 from django.urls import reverse_lazy
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 class ClienteList(ListView):
@@ -42,11 +43,15 @@ class EnderecoCreate(CreateView):
 
 class EnderecoUpdate(UpdateView):
     model = Endereco
-    queryset = Endereco.objects.all()
+
+    #def get_object(self, queryset=None):
+        #return get_object_or_404(self.model, pk=self.kwargs['pk'])
     fields = ['logradouro','bairro','cidade','estado','numero','email','endereco_principal','descricao','cliente']
-    success_url = reverse_lazy('endereco_list')
+    
+    def get_success_url(self):
+        return reverse_lazy('endereco_cliente',kwargs={'cliente_pk': self.kwargs['pk']})
 
 class EnderecoDelete(DeleteView):
     model = Endereco
     queryset = Endereco.objects.all()
-    success_url = reverse_lazy('endereco_list')
+    success_url = reverse_lazy('cliente_list')
