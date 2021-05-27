@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Cliente(models.Model):
-    foto = models.ImageField(upload_to='images/')
+    foto = models.ImageField(upload_to='images/',null=True,blank=True,)
     nome = models.CharField("nome", max_length=50)
     sobrenome = models.CharField("sobrenome", max_length=100)
     cpf = models.CharField("cpf", max_length=11, unique=True)
